@@ -14,7 +14,7 @@ class SerieCard extends Component {
     DeleteFavSerie = () => {
         this.moviesService
             .deleteSerie(this.props.elm.id, this.props.loggedin)
-            .then(res => this.props.fetchUser())            
+            .then(res => this.props.fetchuser())            
             .catch(err => console.log(err))
     }
     

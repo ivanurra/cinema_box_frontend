@@ -23,11 +23,11 @@ class App extends Component {
     this.authService = new authService()
   }
 
-  componentDidMount = () => this.fetchUser()
+  componentDidMount = () => this.fetchuser()
 
   setTheUser = user => this.setState({loggedin: user}, () => console.log('Username', this.state.loggedin))
 
-  fetchUser = () => {
+  fetchuser = () => {
     this.authService
       .isLoggedIn()
       .then(response => this.setState({loggedin: response.data}))
@@ -40,12 +40,12 @@ class App extends Component {
         <Navbar setTheUser={this.setTheUser} loggedin={this.state.loggedin} />
         <Switch>
           <Route path="/" exact render={() => <Home setTheUser={this.setTheUser} loggedin={this.state.loggedin}/>} />
-          <Route path="/movie/:id" render={props => <MovieDetails {...props} loggedin={this.state.loggedin} fetchUser={this.fetchUser}/>} />
-          <Route path="/tv/:id" render={props => <SeriesDetails {...props} loggedin={this.state.loggedin} fetchUser={this.fetchUser}/>} />
+          <Route path="/movie/:id" render={props => <MovieDetails {...props} loggedin={this.state.loggedin} fetchuser={this.fetchuser}/>} />
+          <Route path="/tv/:id" render={props => <SeriesDetails {...props} loggedin={this.state.loggedin} fetchuser={this.fetchuser}/>} />
           <Route path="/signup" render={props => <Signup setTheUser={this.setTheUser} {...props} />} />
           <Route path="/login" render={props => <Login setTheUser={this.setTheUser} {...props} />} />
           <Route path="/about" render={() => <About setTheUser={this.setTheUser} loggedin={this.state.loggedin}/>} />
-          <Route path="/profile" exact render={props => this.state.loggedin ? <Profile loggedin={this.state.loggedin} {...props} fetchUser={this.fetchUser} setTheUser={this.setTheUser}/> : <Redirect to="/login"/>}/>
+          <Route path="/profile" exact render={props => this.state.loggedin ? <Profile loggedin={this.state.loggedin} {...props} fetchuser={this.fetchuser} setTheUser={this.setTheUser}/> : <Redirect to="/login"/>}/>
         </Switch>
         <Footer/>
       </div>

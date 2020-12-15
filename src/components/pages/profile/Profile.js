@@ -21,7 +21,7 @@ class Profile extends Component {
     handleModal = view => this.setState({view})
 
     getMoviesFavorite() {
-        this.props.fetchUser()
+        this.props.fetchuser()
         this.props.loggedin && this.state.arrayMoviesId.map(id => {
             return this.ApiService
                 .findMovies(id)
@@ -82,7 +82,7 @@ class Profile extends Component {
                         <h1>Favorites Movies</h1>                       
                         <div className="cardInfoImg">
                             {this.state.arrayMovies && this.state.arrayMovies.map(elm =>
-                                <MovieCard key={elm.id} elm={elm} {...this.props} fetchUser={this.props.fetchUser} DeleteFavMovie={this.DeleteFavMovie}/>
+                                <MovieCard key={elm.id} elm={elm} {...this.props} fetchuser={this.props.fetchuser} DeleteFavMovie={this.DeleteFavMovie}/>
                             )}
                         </div>
                     </div>
@@ -92,7 +92,7 @@ class Profile extends Component {
                         <h1>Favorites TV Shows</h1>                       
                         <div className="cardInfoImg">
                             {this.state.arraySeries && this.state.arraySeries.map(elm =>
-                                <SerieCard key={elm.id} elm={elm} {...this.props} fetchUser={this.props.fetchUser} DeleteFavSerie={this.DeleteFavSerie}/>
+                                <SerieCard key={elm.id} elm={elm} {...this.props} fetchuser={this.props.fetchuser} DeleteFavSerie={this.DeleteFavSerie}/>
                             )}
                         </div>
                     </div>

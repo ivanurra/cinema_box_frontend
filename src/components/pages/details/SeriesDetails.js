@@ -31,7 +31,7 @@ class SeriesDetails extends Component {
     handleFav = () => {
         this.moviesService
             .saveSerie(this.props.match.params.id, this.props.loggedin, this.state.series)
-            .then(response => this.props.fetchUser())
+            .then(response => this.props.fetchuser())
             .catch(err => console.log(err))
     }
 

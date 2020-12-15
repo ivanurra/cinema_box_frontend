@@ -35,7 +35,7 @@ class MovieDetails extends Component {
         this.moviesService
             .saveMovie(this.state.movies.imdb_id, this.props.loggedin, this.state.movies)
             .then(res => {
-                this.props.fetchUser()
+                this.props.fetchuser()
             })
             .catch(err => console.log(err))
     }
