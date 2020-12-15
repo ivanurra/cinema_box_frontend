@@ -1,6 +1,6 @@
 # CINEMABOX - Frontend
 
-### IMPORTANT: BACKEND IS IN ANOTHER REPO CALLED: cinema_box_backend
+### Important: Backend is in another repo called: cinema_box_backend
 
 App about movies and TV shows. It allows you to keep up to date with the latest releases and the greatest hits of the moment. You can save your favorite movies and series so you don't miss anything.
 
