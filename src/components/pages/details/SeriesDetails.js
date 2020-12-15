@@ -57,7 +57,7 @@ class SeriesDetails extends Component {
                             <h6>Episodes: {this.state.series.number_of_episodes} </h6>
                         <div>
                             <br></br>
-                            <button type="button" id="watch" class="btn btn-light"><a target="_blank" rel="noreferrer" href={this.state.series.homepage}>&#x25BA; Watch</a></button>
+                            <button type="button" id="watch" className="btn btn-light"><a target="_blank" rel="noreferrer" href={this.state.series.homepage}>&#x25BA; Watch</a></button>
                             {this.props.loggedInUser && <Link className="btn btn-danger" id="adding" onClick={() => this.handleFav()}>+ Add to favorites</Link>}
                         </div>
                     </div>

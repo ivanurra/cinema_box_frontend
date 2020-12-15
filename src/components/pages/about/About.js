@@ -25,8 +25,8 @@ class About extends Component {
                 <br></br>
                 <p><strong>Iván Urra</strong></p>
                 <br></br>
-                <button type="button" class="btn btn-primary"><a id="buttonNoStyle" href="https://github.com/ivanurra">GitHub</a></button>
-                <button type="button" class="btn btn-dark"><a id="buttonNoStyle" href="https://www.linkedin.com/in/ivanurra/">LinkedIn</a></button>
+                <button type="button" className="btn btn-primary"><a id="buttonNoStyle" href="https://github.com/ivanurra">GitHub</a></button>
+                <button type="button" className="btn btn-dark"><a id="buttonNoStyle" href="https://www.linkedin.com/in/ivanurra/">LinkedIn</a></button>
             </div>
         )
     }

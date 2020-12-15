@@ -81,7 +81,7 @@ class Profile extends Component {
                     <div>
                         {!this.state.arrayMovies}
                         <h1>Favorites Movies</h1>                       
-                        <div class="cardInfoImg">
+                        <div className="cardInfoImg">
                             {this.state.arrayMovies && this.state.arrayMovies.map(elm =>
                                 <MovieCard key={elm.id} elm={elm} {...this.props} fetchUser={this.props.fetchUser} DeleteFavMovie={this.DeleteFavMovie}/>
                             )}
@@ -91,7 +91,7 @@ class Profile extends Component {
                     <div>
                         {!this.state.arraySeries}
                         <h1>Favorites TV Shows</h1>                       
-                        <div class="cardInfoImg">
+                        <div className="cardInfoImg">
                             {this.state.arraySeries && this.state.arraySeries.map(elm =>
                                 <SerieCard key={elm.id} elm={elm} {...this.props} fetchUser={this.props.fetchUser} DeleteFavSerie={this.DeleteFavSerie}/>
                             )}

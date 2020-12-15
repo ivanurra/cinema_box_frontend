@@ -41,7 +41,7 @@ class Search extends Component {
         return (
             <div className="Search">
                 <form onSubmit={this.handleFormSubmit}>
-                    <input type="text" class="bg-light" name="search" placeholder=" Search" value={this.state.search} onChange={this.handleInputChange} />
+                    <input type="text" className="bg-light" name="search" placeholder=" Search" value={this.state.search} onChange={this.handleInputChange} />
                     <Button type="submit" variant="btn btn-danger">GO</Button>
                 </form> 
                 <Modal show={this.state.view} onHide={() => this.handleModal(false)}>

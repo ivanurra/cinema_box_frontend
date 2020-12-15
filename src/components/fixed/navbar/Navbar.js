@@ -29,12 +29,12 @@ class Navigation extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" >
                     <Nav className="ml-auto">
-                        <Link className="nav-link" to="/" class="buttonsNav">Home</Link>
-                        <Link className="about" to="/about" class="buttonsNav">About</Link>
-                        {!this.props.loggedInUser && <Link className="nav-link" to="/signup" class="buttonsNav">Sign Up</Link>}
-                        {!this.props.loggedInUser && <Link className="nav-link" to="/login" class="buttonsNav">Login</Link>}
-                        {this.props.loggedInUser &&  <Link className="nav-link" onClick={this.logoutUser} class="buttonsNav">Logout</Link>}
-                        <Link className="nav-link" to="/profile" class="buttonsNav">&#x25AA; Hello, {this.props.loggedInUser ? this.props.loggedInUser.username : 'guest!'}</Link>
+                        <Link className="nav-link, buttonsNav" to="/">Home</Link>
+                        <Link className="about, buttonsNav" to="/about">About</Link>
+                        {!this.props.loggedInUser && <Link className="nav-link, buttonsNav" to="/signup">Sign Up</Link>}
+                        {!this.props.loggedInUser && <Link className="nav-link, buttonsNav" to="/login">Login</Link>}
+                        {this.props.loggedInUser &&  <Link className="nav-link, buttonsNav" onClick={this.logoutUser}>Logout</Link>}
+                        <Link className="nav-link, buttonsNav" to="/profile">&#x25AA; Hello, {this.props.loggedInUser ? this.props.loggedInUser.username : 'guest!'}</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
