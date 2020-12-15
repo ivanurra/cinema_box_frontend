@@ -17,6 +17,20 @@ Instructions for getting a copy of the working project on your local machine for
 * Fork this repo.
 * Clone this repo.
 
+### BACKEND Installation 🔧
+
+Install all dependencies described in package.json:
+
+```
+$ npm install
+```
+
+Start the back at http://localhost:3000/
+
+```
+$ npm run dev
+```
+
 ### FRONTEND Installation 🔧
 
 Install all dependencies described in package.json:
@@ -31,7 +45,7 @@ Start your REACT app at http://localhost:3000/
 $ npm start
 ```
 
-IMPORTANT: You will need the Api Keys to be able to use the app. 
+IMPORTANT: You will need the Api Keys to be able to use the app.
 
 ## Deployment 📦
 
