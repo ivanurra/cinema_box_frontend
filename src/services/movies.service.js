@@ -4,6 +4,8 @@ class MoviesService {
 
     constructor() {
         let api = axios.create({
+            // Here you must include the url of your BACKEND, localhost or online.
+            // baseURL: process.env.REACT_APP_URL,
             baseURL: 'http://localhost:3000/',
             withCredentials: true
         })

@@ -33,7 +33,7 @@ class MovieDetails extends Component {
     handleFav = () => {
 
         this.moviesService
-            .saveMovie(this.state.movies.imdb_id, this.props.loggedInUser, this.state.movies)
+            .saveMovie(this.state.movies.imdb_id, this.props.loggedin, this.state.movies)
             .then(res => {
                 this.props.fetchUser()
             })
@@ -67,7 +67,7 @@ class MovieDetails extends Component {
                             <br></br>
                             <div>
                                 <button type="button" id="watch" className="btn btn-light"><a target="_blank" rel="noreferrer" href={this.state.movies.homepage}>&#x25BA; Watch</a></button>
-                                {this.props.loggedInUser && <button className="btn btn-danger" id="adding" onClick={() => this.handleFav()}>+ Add to favorites</button>}
+                                {this.props.loggedin && <button className="btn btn-danger" id="adding" onClick={() => this.handleFav()}>+ Add to favorites</button>}
                             </div>
                         </div>
                     </div>

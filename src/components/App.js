@@ -18,36 +18,36 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      loggedInUser: undefined
+      loggedin: undefined
     }
     this.authService = new authService()
   }
 
   componentDidMount = () => this.fetchUser()
 
-  setTheUser = user => this.setState({loggedInUser: user}, () => console.log('Username', this.state.loggedInUser))
+  setTheUser = user => this.setState({loggedin: user}, () => console.log('Username', this.state.loggedin))
 
   fetchUser = () => {
     this.authService
       .isLoggedIn()
-      .then(response => this.setState({ loggedInUser: response.data }))
-      .catch(err => this.setState({ loggedInUser: null }))
+      .then(response => this.setState({loggedin: response.data}))
+      .catch(err => this.setState({loggedin: null}))
   }
 
   render() {
     return (
       <div>
-        <Navbar setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
+        <Navbar setTheUser={this.setTheUser} loggedin={this.state.loggedin} />
         <Switch>
-          <Route path="/" exact render={() => <Home setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser}/>} />
-          <Route path="/movie/:id" render={props => <MovieDetails {...props} loggedInUser={this.state.loggedInUser} fetchUser={this.fetchUser}/>} />
-          <Route path="/tv/:id" render={props => <SeriesDetails {...props} loggedInUser={this.state.loggedInUser} fetchUser={this.fetchUser}/>} />
+          <Route path="/" exact render={() => <Home setTheUser={this.setTheUser} loggedin={this.state.loggedin}/>} />
+          <Route path="/movie/:id" render={props => <MovieDetails {...props} loggedin={this.state.loggedin} fetchUser={this.fetchUser}/>} />
+          <Route path="/tv/:id" render={props => <SeriesDetails {...props} loggedin={this.state.loggedin} fetchUser={this.fetchUser}/>} />
           <Route path="/signup" render={props => <Signup setTheUser={this.setTheUser} {...props} />} />
           <Route path="/login" render={props => <Login setTheUser={this.setTheUser} {...props} />} />
-          <Route path="/about" render={() => <About setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser}/>} />
-          <Route path="/profile" exact render={props => this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser}  {...props} fetchUser={this.fetchUser} setTheUser={this.setTheUser}/> : <Redirect to="/login"/>}/>
+          <Route path="/about" render={() => <About setTheUser={this.setTheUser} loggedin={this.state.loggedin}/>} />
+          <Route path="/profile" exact render={props => this.state.loggedin ? <Profile loggedin={this.state.loggedin} {...props} fetchUser={this.fetchUser} setTheUser={this.setTheUser}/> : <Redirect to="/login"/>}/>
         </Switch>
-        <Footer />
+        <Footer/>
       </div>
     )
   }

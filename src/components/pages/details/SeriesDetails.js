@@ -16,7 +16,7 @@ class SeriesDetails extends Component {
         this.moviesService = new moviesService()
         this.ApiService = new ApiService()
     }
-
+    
     getFindSeries(id) {
     this.ApiService
             .findSeries(id)
@@ -30,7 +30,7 @@ class SeriesDetails extends Component {
 
     handleFav = () => {
         this.moviesService
-            .saveSerie(this.props.match.params.id, this.props.loggedInUser, this.state.series)
+            .saveSerie(this.props.match.params.id, this.props.loggedin, this.state.series)
             .then(response => this.props.fetchUser())
             .catch(err => console.log(err))
     }
@@ -58,7 +58,7 @@ class SeriesDetails extends Component {
                         <div>
                             <br></br>
                             <button type="button" id="watch" className="btn btn-light"><a target="_blank" rel="noreferrer" href={this.state.series.homepage}>&#x25BA; Watch</a></button>
-                            {this.props.loggedInUser && <Button className="btn btn-danger" id="adding" onClick={() => this.handleFav()}>+ Add to favorites</Button>}
+                            {this.props.loggedin && <Button className="btn btn-danger" id="adding" onClick={() => this.handleFav()}>+ Add to favorites</Button>}
                         </div>
                     </div>
                 </div>

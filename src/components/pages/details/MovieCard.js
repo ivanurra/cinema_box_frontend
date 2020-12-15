@@ -13,7 +13,7 @@ class MovieCard extends Component {
     
     DeleteFavMovie = () => {
         this.moviesService
-            .deleteMovie(this.props.elm.imdb_id, this.props.loggedInUser, this.rerender())
+            .deleteMovie(this.props.elm.imdb_id, this.props.loggedin, this.rerender())
             .then(res => this.props.fetchUser())            
             .catch(err => console.log(err))
     }

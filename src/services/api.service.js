@@ -4,6 +4,7 @@ class ApiService {
 
     constructor() {
         this.api = axios.create({
+            // TMDB API URL 
             baseURL: 'https://api.themoviedb.org/3'
         })
     }

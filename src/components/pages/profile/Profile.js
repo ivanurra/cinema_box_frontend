@@ -11,9 +11,8 @@ class Profile extends Component {
         this.state = {
             arrayMovies: [],
             arraySeries: [],
-            arrayMoviesId: this.props.loggedInUser.favoriteMovies,
-            arraySeriesId: this.props.loggedInUser.favoriteSeries,
-            view: false            
+            arrayMoviesId: this.props.loggedin.favoriteMovies,
+            view: false             
         }
         this.moviesService = new moviesService()
         this.ApiService = new ApiService()
@@ -23,7 +22,7 @@ class Profile extends Component {
 
     getMoviesFavorite() {
         this.props.fetchUser()
-        this.props.loggedInUser && this.state.arrayMoviesId.map(id => {
+        this.props.loggedin && this.state.arrayMoviesId.map(id => {
             return this.ApiService
                 .findMovies(id)
                 .then(response => {
@@ -35,7 +34,7 @@ class Profile extends Component {
     }
 
     getSeriesFavorite() {
-        this.props.loggedInUser.favoriteSeries.map(id => {
+        this.props.loggedin.favoriteSeries.map(id => {
             return this.ApiService
                 .findSeries(id)
                 .then(response => {
@@ -53,7 +52,7 @@ class Profile extends Component {
     
     DeleteFavMovie = (id) => {
         this.moviesService
-            .deleteMovie(id, this.props.loggedInUser)
+            .deleteMovie(id, this.props.loggedin)
             .then(response => {
                 this.setState({arrayMoviesId: response.data.favoriteMovies, arrayMovies: []}, () => this.getMoviesFavorite())
             })
@@ -62,7 +61,7 @@ class Profile extends Component {
 
     DeleteFavSerie = (id) => {
         this.moviesService
-            .deleteSerie(id, this.props.loggedInUser)
+            .deleteSerie(id, this.props.loggedin)
             .then(response => {
                 this.setState({ arraySeriesId: response.data.favoriteSeries, arraySeries: [] }, () => this.getSeriesFavorite())
                 this.setState()
@@ -75,7 +74,7 @@ class Profile extends Component {
             <div className="backgroundProfile">
                 <div className="container profile mw-100">
                     <div className="row">
-                        <h1>Welcome, {this.props.loggedInUser.username} &#x263B;</h1>
+                        <h1>Welcome, {this.props.loggedin.username} &#x263B;</h1>
                     </div>
                     <div id="divideHome"></div>
                     <div>
