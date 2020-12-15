@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
 import Image from 'react-bootstrap/Image'
 import ApiService from '../../../services/api.service.js'
 import moviesService from '../../../services/movies.service.js'
+import Button from 'react-bootstrap/Button'
 
 class SeriesDetails extends Component {
     
@@ -58,7 +58,7 @@ class SeriesDetails extends Component {
                         <div>
                             <br></br>
                             <button type="button" id="watch" className="btn btn-light"><a target="_blank" rel="noreferrer" href={this.state.series.homepage}>&#x25BA; Watch</a></button>
-                            {this.props.loggedInUser && <Link className="btn btn-danger" id="adding" onClick={() => this.handleFav()}>+ Add to favorites</Link>}
+                            {this.props.loggedInUser && <Button className="btn btn-danger" id="adding" onClick={() => this.handleFav()}>+ Add to favorites</Button>}
                         </div>
                     </div>
                 </div>

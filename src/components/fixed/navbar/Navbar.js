@@ -33,7 +33,7 @@ class Navigation extends Component {
                         <Link className="about, buttonsNav" to="/about">About</Link>
                         {!this.props.loggedInUser && <Link className="nav-link, buttonsNav" to="/signup">Sign Up</Link>}
                         {!this.props.loggedInUser && <Link className="nav-link, buttonsNav" to="/login">Login</Link>}
-                        {this.props.loggedInUser &&  <Link className="nav-link, buttonsNav" onClick={this.logoutUser}>Logout</Link>}
+                        {this.props.loggedInUser &&  <Link className="nav-link, buttonsNav" to="/" onClick={this.logoutUser}>Logout</Link>}
                         <Link className="nav-link, buttonsNav" to="/profile">&#x25AA; Hello, {this.props.loggedInUser ? this.props.loggedInUser.username : 'guest!'}</Link>
                     </Nav>
                 </Navbar.Collapse>
