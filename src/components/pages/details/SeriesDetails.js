@@ -26,6 +26,7 @@ class SeriesDetails extends Component {
 
     componentDidMount() {
         this.getFindSeries(this.props.match.params.id)
+        window.scrollTo(0, 0)
     }
 
     handleFav = () => {
