@@ -5,8 +5,7 @@ class AuthService {
     constructor() {
         let api = axios.create({
             // Here you must include the url of your BACKEND, localhost or online.
-            // baseURL: process.env.REACT_APP_URL,
-            baseURL: 'http://localhost:3000/',
+            baseURL: 'https://boxcinema.herokuapp.com/',
             withCredentials: true
         })
         this.api = api
