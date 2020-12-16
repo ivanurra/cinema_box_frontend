@@ -30,7 +30,7 @@ class App extends Component {
   fetchuser = () => {
     this.authService
       .isLoggedIn()
-      .then(response => this.setState({loggedin: response}))
+      .then(response => this.setState({loggedin: response.data}))
       .catch(err => this.setState({loggedin: null}))
   }
 
