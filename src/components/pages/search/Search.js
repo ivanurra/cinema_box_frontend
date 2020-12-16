@@ -25,7 +25,7 @@ class Search extends Component {
         e.preventDefault()
 
         axios
-            .get(`http://www.omdbapi.com/?apikey=3c888767&s=${this.state.search}`)
+            .get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_KEYS}&s=${this.state.search}`)
             .then((response) => { 
                 this.setState({
                     arraySearch: response.data,
