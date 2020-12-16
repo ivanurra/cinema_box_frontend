@@ -14,6 +14,5 @@ class ApiService {
     findSeries = id => this.api.get(`/tv/${id}?api_key=${process.env.REACT_APP_KEY}`)
     findImageMovies = id => this.api.get(`/movie/${id}/images?api_key=${process.env.REACT_APP_KEY}`)
 }
-
 export default ApiService
 
