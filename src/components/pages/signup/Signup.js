@@ -45,7 +45,7 @@ class Signup extends Component {
                     <Row className="justify-content-center">
                         <Col md={{span: 4}}>
                             <h1>SIGN UP</h1>
-                            <h5>Sign up to save your favorite movies and TV shows.</h5>
+                            <h5>Register to save your favorite movies and TV shows.</h5>
                             <br></br>
                             <Form onSubmit={this.handleFormSubmit}>
                                 <Form.Group>
