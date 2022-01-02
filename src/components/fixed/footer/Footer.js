@@ -4,7 +4,7 @@ const Footer = () => {
     
     return (
         <footer>
-            <p>2020 &#169; Made by <a id="meLink" href="https://github.com/ivanurra">Iván Urra</a></p>
+            <p>2022 &#169; Made by <a id="meLink" href="https://github.com/ivanurra">Iván Urra</a></p>
         </footer>
     )
 }

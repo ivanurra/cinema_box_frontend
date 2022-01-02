@@ -75,6 +75,6 @@ https://cinemabox.netlify.app/
 
 ## License 📄
 
-© 2020 Copyright: Iván Urra.
+© 2022 Copyright: Iván Urra.
 
 Personal and non-commercial use.
